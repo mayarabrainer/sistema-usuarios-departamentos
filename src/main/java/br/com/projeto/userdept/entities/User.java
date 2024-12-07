@@ -44,10 +44,14 @@ public class User {
         this.email = email;
     }
 
-    public User(String name, String email) {
-        this.name = name;
-        this.email = email;
+    public Department getDepartment() {
+        return department;
     }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
 }
 
 

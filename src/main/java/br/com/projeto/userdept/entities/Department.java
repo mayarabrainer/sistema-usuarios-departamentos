@@ -30,8 +30,5 @@ public class Department {
         this.id = id;
     }
 
-    public Department(String name) {
-        this.name = name;
-    }
 }
 
