@@ -1,15 +1,16 @@
 package br.com.projeto.userdept.controllers;
 
-import br.com.projeto.userdept.controllers.dto.DepartmentDTO;
-import br.com.projeto.userdept.controllers.dto.UserDTO;
-import br.com.projeto.userdept.entities.User;
+
+import br.com.projeto.userdept.dto.UserDTO;
+
 import br.com.projeto.userdept.services.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping(value = "/users")
@@ -29,12 +30,12 @@ public class UserController {
     }
 
     @PostMapping
-    public UserDTO insert(@RequestBody UserDTO userDTO) {
+    public UserDTO insert(@RequestBody @Valid UserDTO userDTO) {
         return userService.save(userDTO);
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<UserDTO> update(@PathVariable Long id, @RequestBody  UserDTO user) {
+    public ResponseEntity<UserDTO> update(@PathVariable Long id, @RequestBody @Valid  UserDTO user) {
         UserDTO userDTO = userService.update(id, user);
 
         return ResponseEntity.ok(userDTO);

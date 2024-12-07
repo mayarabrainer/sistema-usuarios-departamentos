@@ -1,4 +1,4 @@
-package br.com.projeto.userdept.controllers.dto;
+package br.com.projeto.userdept.dto;
 
 import br.com.projeto.userdept.entities.Department;
 import jakarta.validation.constraints.NotBlank;

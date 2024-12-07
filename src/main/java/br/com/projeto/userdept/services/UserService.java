@@ -1,8 +1,6 @@
 package br.com.projeto.userdept.services;
 
-import br.com.projeto.userdept.controllers.dto.DepartmentDTO;
-import br.com.projeto.userdept.controllers.dto.UserDTO;
-import br.com.projeto.userdept.entities.Department;
+import br.com.projeto.userdept.dto.UserDTO;
 import br.com.projeto.userdept.entities.User;
 import br.com.projeto.userdept.repositories.UserRepository;
 import org.springframework.stereotype.Service;

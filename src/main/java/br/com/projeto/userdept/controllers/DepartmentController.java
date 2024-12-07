@@ -1,7 +1,8 @@
 package br.com.projeto.userdept.controllers;
 
-import br.com.projeto.userdept.controllers.dto.DepartmentDTO;
+import br.com.projeto.userdept.dto.DepartmentDTO;
 import br.com.projeto.userdept.services.DepartmentService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class DepartmentController {
     }
 
     @PostMapping
-    public DepartmentDTO insert(@RequestBody DepartmentDTO department) {
+    public DepartmentDTO insert(@RequestBody @Valid DepartmentDTO department) {
         return departmentService.save(department);
     }
 
