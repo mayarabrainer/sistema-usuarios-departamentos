@@ -1,9 +1,11 @@
 package br.com.projeto.userdept.dto;
 
 import br.com.projeto.userdept.entities.Department;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class DepartmentDTO {
 
     private Long id;
@@ -21,6 +23,7 @@ public class DepartmentDTO {
 
     public static Department toEntity(DepartmentDTO departmentDTO) {
         Department department = new Department();
+        department.setId(departmentDTO.getId());
         department.setName(departmentDTO.getName());
         return department;
     }

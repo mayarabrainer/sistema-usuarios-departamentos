@@ -2,6 +2,7 @@ package br.com.projeto.userdept.services;
 
 import br.com.projeto.userdept.dto.DepartmentDTO;
 import br.com.projeto.userdept.entities.Department;
+import br.com.projeto.userdept.exceptions.DepartmentNotFoundException;
 import br.com.projeto.userdept.repositories.DepartmentRepository;
 import org.springframework.stereotype.Service;
 
@@ -45,7 +46,7 @@ public class DepartmentService {
 
             return DepartmentDTO.from(savedDepartment);
         }
-        return null;
+        throw new DepartmentNotFoundException("Departamento não existe!");
     }
 
     public void delete(Long id) {
